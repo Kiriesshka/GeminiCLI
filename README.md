@@ -3,17 +3,17 @@
 
 ## Установка:
   1. Скопировать репозиторий:
-    **`git clone https://github.com/Kiriesshka/CommandLineGemini.git`**
+     ```git clone https://github.com/Kiriesshka/CommandLineGemini.git```
   2. Перейти в папку:
-    **`cd ComandLineGemini`**
+     ```cd ComandLineGemini```
   3. С помощью любого удобного редактора открыть файл:
-    **`vim gemini.py`**
-  4. Вставить api ключ в поле API_KEY.
+     ```vim gemini.py```
+  4. Вставить api ключ в поле **`API_KEY`**.
   5. Если нужен запуск из любой места в терминале по шорткату, прочитайте файл shortcut.txt и выполните его требования.
 
 ## Использование
   Предусмотрено несколько комманд, чтобы вывести их на экран нужно пописать команду:
-    **`/help`**
+    ```/help```
   после запуска программы.
   
 ## Примечания
