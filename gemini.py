@@ -10,7 +10,11 @@ prompts = []
 models = ["gemini-1.0-pro","gemini-1.5-pro","gemini-1.5-flash"]
 model = models[2]
 #SET YOUR API KEY HERE!
+<<<<<<< HEAD
 API_KEY = "AIzaSyBbKR4mI_MYfOsg4k-1_DV-Crse9F4bulI"
+=======
+API_KEY = ""
+>>>>>>> 38b5aa810b08107d12647376324c3f2ccb7bc82e
 
 color_codes = [
         "\033[91m",
