@@ -1,5 +1,6 @@
 import requests
 import json
+import os
 
 userName = "USER"
 aiName = "GEMINI"
@@ -9,7 +10,7 @@ prompts = []
 models = ["gemini-1.0-pro","gemini-1.5-pro","gemini-1.5-flash"]
 model = models[2]
 #SET YOUR API KEY HERE!
-API_KEY = "AIzaSyBq0qN06pNeNQ36BzaFyNuro6mmY9yjEwc"
+API_KEY = "AIzaSyBbKR4mI_MYfOsg4k-1_DV-Crse9F4bulI"
 
 color_codes = [
         "\033[91m",
@@ -27,21 +28,26 @@ def LoadPrompt(name):
     global memory, aiName, userName
     memory = []
     try:
-        with open("PROMPTS/"+name, "r", encoding='utf-8') as file:
+        ftmp =os.path.abspath(__file__).split("/")
+        d = ""
+        for i in range(len(ftmp)-1):
+            d+=ftmp[i]+"/"
+        
+        with open(d +"PROMPTS/"+name, "r", encoding='utf-8') as file:
             text = file.read()
         memory.append(text)
         print("PROMPT:\n    > "+text)
     except:
-        print(color_codes[5]+"SYSTEM:"+color_codes[7] + ":\n    >"+color_codes[1]+" Err! (Maybe you dont have PROMPT file and/or access to it)"+color_codes[7])
+        print(color_codes[5]+"SYSTEM:"+color_codes[7] + ":\n    >"+color_codes[0]+" Err! (Maybe you dont have PROMPT file and/or access to it)"+color_codes[7])
     
     try:
-        with open("PROMPTS/"+name+".settings", "r", encoding='utf-8') as file:
+        with open(d +"PROMPTS/"+name+".settings", "r", encoding='utf-8') as file:
             text = file.read()
         settings = text.split("_/_")
         aiName = settings[0].replace("\n","")
         userName = settings[1].replace("\n","")
     except:
-        print(color_codes[5]+"SYSTEM:"+color_codes[7] + ":\n    >"+color_codes[1]+" Err! (Maybe you dont have prompt .settings file and/or access to it)"+color_codes[7])
+        print(color_codes[5]+"SYSTEM:"+color_codes[7] + ":\n    >"+color_codes[0]+" Err! (Maybe you dont have prompt .settings file and/or access to it)"+color_codes[7])
 
 def MakeQuestion(q):
     mem = ""
@@ -118,11 +124,14 @@ while runProgram:
             print("      /clear | clears all memory")
             print("      /username [name] | set new name to user")
             print("      /ainame [name] | set new name to ai")
-            print("      /load [promptFileName.promptFileExtension] | loads prompt from file")
+            print("      /load [promptFileName.promptFileExtension] | loads prompt from file from PROMPTS directory")
             print("      /switch:\n           >\n            /switch [index] | switch to model by index\n            /switch list | show avaliable models and indexes")
             print("      /info | shows info about ai")
             print("      /save [fileName]| saves current dialogue to file with name [fileName]")
             print("      /memorydeep [int] | set memorydeep to [int]")
+        if "pwd" in question:
+            print(color_codes[5]+"SYSTEM: "+color_codes[7]+":\n    > Working directory:", end = "  ")
+            os.system("pwd")
         if "api" in question:
             qParts = question.split(" ")
             API_KEY = qParts[1]
