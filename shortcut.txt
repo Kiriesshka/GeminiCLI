@@ -1,2 +1,5 @@
 To launch this from shortcut add this to ~/.bashrc
-alias ai='python3 /path/to/launch_ai.sh'
+alias ai='python3 /path/to/gemini.py'
+
+Or this:
+alias ai='bash /path/to/gemini.sh'

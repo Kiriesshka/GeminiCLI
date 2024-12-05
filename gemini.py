@@ -9,7 +9,7 @@ memory = []
 prompts = []
 models = ["gemini-1.0-pro","gemini-1.5-pro","gemini-1.5-flash"]
 model = models[2]
-#SET YOUR API KEY HERE!
+#ENTER YOUR API KEY HERE!
 API_KEY = ""
 color_codes = [
         "\033[91m",
