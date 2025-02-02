@@ -109,7 +109,7 @@ def MakeQuestion(q):
     print(color_codes[1] + aiName+color_codes[7] +':\n    > ', text_new)
     memory.append(userName+": " + q+" ")
     memory.append(aiName+": " + text+" ")
-    if(len(memory) > memoryDeep): memory.pop(0)
+    if(len(memory) > memoryDeep): memory.pop(1)
 
 runProgram = True
 while runProgram:
