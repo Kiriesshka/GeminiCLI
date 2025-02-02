@@ -1,5 +1,8 @@
 To launch this from shortcut add this to ~/.bashrc
-alias ai='python3 /path/to/gemini.py'
+for python:
+  alias ai='python3 /path/to/gemini.py'
 
-Or this:
-alias ai='bash /path/to/gemini.sh'
+Or this for shell:
+  alias ai='bash /path/to/gemini.sh'
+
+Now you can launch script by command ai in terminal
